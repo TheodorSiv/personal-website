@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theodor Sivager — Physicist &amp; Science Communicator</title>
+<meta name="description" content="Theodor Sivager is a physics student at the University of Copenhagen, science communicator, researcher, and founder of Unge Videnskabsformidlere. Represented Denmark at EUCYS and ISEF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f8f6f3;
+    --muted: #6b6560;
+    --accent: #c47a2a;
+    --divider: #d9d4ce;
+    --card-bg: #ffffff;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: white;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(248,246,243,0.85);
+    border-bottom: 1px solid var(--divider);
+  }
+
+  nav .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.25s;
+  }
+
+  nav a:hover { color: var(--ink); }
+
+  .lang-switch {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--divider);
+    border-radius: 3px;
+    padding: 0.25rem 0.6rem;
+    color: var(--muted);
+    transition: border-color 0.25s, color 0.25s;
+  }
+
+  .lang-switch:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.3em;
+  }
+
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-text .subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .hero-text .intro {
+    font-size: 0.95rem;
+    max-width: 480px;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+
+  .hero-portrait {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hero-portrait img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 2px;
+    filter: grayscale(15%);
+    transition: filter 0.5s;
+  }
+
+  .hero-portrait img:hover { filter: grayscale(0%); }
+
+  .hero-portrait::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: -1rem;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    border: 1px solid var(--divider);
+    border-radius: 2px;
+    z-index: -1;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-links a {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--accent);
+    transition: color 0.25s;
+  }
+
+  .hero-links a:hover { color: var(--accent); }
+
+  section { padding: 6rem 2rem; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 400;
+    margin-bottom: 3rem;
+    line-height: 1.25;
+  }
+
+  .highlights { background: var(--card-bg); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.25rem;
+    grid-auto-rows: 200px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s;
+    filter: grayscale(10%);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+    filter: grayscale(0%);
+  }
+
+  .gallery-item .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.2rem 1.3rem;
+    background: linear-gradient(to top, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.3) 70%, rgba(26,26,26,0) 100%);
+    color: white;
+    transform: translateY(8px);
+    opacity: 0.95;
+    transition: transform 0.4s, opacity 0.4s;
+  }
+
+  .gallery-item:hover .overlay { transform: translateY(0); opacity: 1; }
+
+  .gallery-item .overlay .caption-year {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.15rem;
+  }
+
+  .gallery-item .overlay .caption-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* Row 1: LIYSF (wide) + ISEF (narrow) */
+  .gallery-item:nth-child(1) { grid-column: span 8; grid-row: span 2; }
+  .gallery-item:nth-child(2) { grid-column: span 4; grid-row: span 2; }
+  /* Row 2: EUCYS + UF2024 + SIYSS */
+  .gallery-item:nth-child(3) { grid-column: span 5; grid-row: span 2; }
+  .gallery-item:nth-child(4) { grid-column: span 4; grid-row: span 2; }
+  .gallery-item:nth-child(5) { grid-column: span 3; grid-row: span 2; }
+  /* Row 3: UF2022 + Bloom Talk + Opfinderfestival */
+  .gallery-item:nth-child(6) { grid-column: span 5; grid-row: span 2; }
+  .gallery-item:nth-child(7) { grid-column: span 4; grid-row: span 2; }
+  .gallery-item:nth-child(8) { grid-column: span 3; grid-row: span 2; }
+  /* Row 4: China Shanghai + China Desert (wide cinematic) */
+  .gallery-item:nth-child(9) { grid-column: span 4; grid-row: span 2; }
+  .gallery-item:nth-child(10) { grid-column: span 8; grid-row: span 2; }
+  /* Row 5: Big Bang + Sorø + Book */
+  .gallery-item:nth-child(11) { grid-column: span 4; grid-row: span 2; }
+  .gallery-item:nth-child(12) { grid-column: span 4; grid-row: span 2; }
+  .gallery-item:nth-child(13) { grid-column: span 4; grid-row: span 2; }
+
+  .experience-grid { display: grid; gap: 2.5rem; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-date {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 400;
+    padding-top: 0.15rem;
+  }
+
+  .exp-content h3 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .exp-content .exp-org {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-content p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-content p:last-child { margin-bottom: 0; }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .award-card {
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 3px;
+    border: 1px solid var(--divider);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .award-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  }
+
+  .award-year {
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .award-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+  }
+
+  .award-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .research-list { display: grid; gap: 2rem; }
+
+  .research-item {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: 1.5rem;
+  }
+
+  .research-bar { background: var(--accent); border-radius: 2px; }
+
+  .research-item h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .research-item p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .talks-table { width: 100%; border-collapse: collapse; }
+
+  .talks-table tr {
+    border-bottom: 1px solid var(--divider);
+    transition: background 0.2s;
+  }
+
+  .talks-table tr:hover { background: rgba(196,122,42,0.04); }
+
+  .talks-table td {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    vertical-align: top;
+  }
+
+  .talks-table .talk-year {
+    width: 80px;
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.82rem;
+  }
+
+  .talks-table .talk-desc { color: var(--ink); }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .edu-item h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-item .edu-school {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-item p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .contact-section {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .contact-section .section-label { color: var(--accent); }
+  .contact-section .section-title { color: var(--paper); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info p {
+    font-size: 0.92rem;
+    margin-bottom: 0.8rem;
+    color: rgba(248,246,243,0.7);
+  }
+
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .contact-info a:hover { opacity: 0.75; }
+
+  .contact-info .contact-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(248,246,243,0.4);
+    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-info .contact-label:first-child { margin-top: 0; }
+
+  .contact-note {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(248,246,243,0.6);
+  }
+
+  .lang-grid {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .lang-item .lang-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--paper);
+    margin-bottom: 0.2rem;
+  }
+
+  .lang-item .lang-level {
+    font-size: 0.78rem;
+    color: rgba(248,246,243,0.5);
+  }
+
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(248,246,243,0.08);
+    padding: 2rem;
+    text-align: center;
+    color: rgba(248,246,243,0.3);
+    font-size: 0.75rem;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    nav ul.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--paper);
+      padding: 1.5rem 2rem;
+      gap: 1.2rem;
+      border-bottom: 1px solid var(--divider);
+    }
+    .hamburger { display: flex; }
+
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-portrait { justify-content: center; order: -1; }
+    .hero-portrait img { max-width: 280px; }
+    .hero-portrait::after { display: none; }
+
+    section { padding: 4rem 1.5rem; }
+
+    .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
+
+    .awards-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-note { display: none; }
+
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+    .gallery-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+    .gallery-item .overlay { transform: translateY(0); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Theodor Sivager</a>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="../index.html" class="lang-switch">DA</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="about">
+  <div class="hero-inner">
+    <div class="hero-text fade-up">
+      <h1>Theodor<br><em>Sivager</em></h1>
+      <p class="subtitle">Physicist · Science Communicator · Researcher</p>
+      <p class="intro">
+        Aspiring physicist studying at the University of Copenhagen with a strong background in scientific research and communication. Represented Denmark at EUCYS 2024 and placed 4th globally at ISEF 2023 in Physics &amp; Astronomy. Speaker at the London International Youth Science Forum, the Stockholm International Youth Science Seminar during Nobel Week, and the Bloom Festival.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:theodor@sivager.com">Email</a>
+        <a href="https://www.linkedin.com/in/theodor-sivager" target="_blank">LinkedIn</a>
+        <a href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-portrait fade-up">
+      <img src="../businessPortrait.jpg" alt="Theodor Sivager" loading="eager">
+    </div>
+  </div>
+</section>
+
+<section class="highlights" id="highlights">
+  <div class="section-inner">
+    <p class="section-label fade-up">A Journey in Science</p>
+    <h2 class="section-title fade-up">Selected Highlights</h2>
+    <div class="gallery-grid">
+
+      <div class="gallery-item fade-up">
+        <img src="../liysf.jpg" alt="Presenting at London International Youth Science Forum">
+        <div class="overlay">
+          <p class="caption-year">2024 · London</p>
+          <p class="caption-title">London International Youth Science Forum</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../isef.jpg" alt="At Regeneron ISEF 2023 in Dallas">
+        <div class="overlay">
+          <p class="caption-year">2023 · Dallas</p>
+          <p class="caption-title">Regeneron ISEF — 4th Place, Physics &amp; Astronomy</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../eucys.jpg" alt="Presenting at EUCYS 2024 in Katowice">
+        <div class="overlay">
+          <p class="caption-year">2024 · Katowice</p>
+          <p class="caption-title">EU Contest for Young Scientists</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../uf2024.jpg" alt="Unge Forskere 2024 — 1st place and special awards">
+        <div class="overlay">
+          <p class="caption-year">2024 · Copenhagen</p>
+          <p class="caption-title">Unge Forskere — 1st Place &amp; Communication Awards</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../siyss.jpg" alt="Presenting at SIYSS during Nobel Week">
+        <div class="overlay">
+          <p class="caption-year">2024 · Stockholm</p>
+          <p class="caption-title">SIYSS — Nobel Week</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../uf2022.jpg" alt="Unge Forskere 2022 — 2nd place, RUC Challenge and SDU Sustainability awards">
+        <div class="overlay">
+          <p class="caption-year">2022 · Copenhagen</p>
+          <p class="caption-title">Unge Forskere — 2nd Place &amp; Special Awards</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../bloom_talk.jpg" alt="Bloom Festival talk">
+        <div class="overlay">
+          <p class="caption-year">2025 · Frederiksberg</p>
+          <p class="caption-title">The Sound of a Drop — Bloom Talk</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../opfinderfestival.jpg" alt="Opfinderfestival at Danmarks Tekniske Museum">
+        <div class="overlay">
+          <p class="caption-year">2025 · Helsingør</p>
+          <p class="caption-title">Opfinderfestival — Teknisk Museum</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../china_shanghai.jpg" alt="Junior Edison filming in Shanghai">
+        <div class="overlay">
+          <p class="caption-year">2023 · Shanghai</p>
+          <p class="caption-title">Junior Edison — Shanghai Astronomy Museum</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../china_desert.jpg" alt="Junior Edison in Dunhuang desert">
+        <div class="overlay">
+          <p class="caption-year">2023 · Dunhuang</p>
+          <p class="caption-title">Junior Edison — Gansu Desert</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../bigbang.jpg" alt="Worldcafé at Big Bang Conference">
+        <div class="overlay">
+          <p class="caption-year">2026 · Odense</p>
+          <p class="caption-title">Big Bang — Worldcafé</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../soro.jpg" alt="Presenting at Sorø Sciencecenter">
+        <div class="overlay">
+          <p class="caption-year">2026 · Sorø</p>
+          <p class="caption-title">Unge Videnskabsformidlere — Sorø Sciencecenter</p>
+        </div>
+      </div>
+
+      <div class="gallery-item fade-up">
+        <img src="../book.jpg" alt="Book chapter Magien i undersøgelsen">
+        <div class="overlay">
+          <p class="caption-year">2026 · Publication</p>
+          <p class="caption-title">Book Chapter — "Magien i undersøgelsen"</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label fade-up">Career</p>
+    <h2 class="section-title fade-up">Experience</h2>
+    <div class="experience-grid">
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Aug 2025 – present</span>
+        <div class="exp-content">
+          <h3>Founder, Chair &amp; Project Manager</h3>
+          <p class="exp-org">Unge Videnskabsformidlere</p>
+          <p>Unge Videnskabsformidlere is a national organisation for young science communicators, built on a simple idea: young people communicate science to young people.</p>
+          <p>As founder and chair, I have been responsible for establishing the organisation from the ground up; assembling the founding board and core team, building the organisational structure, and developing the programme. I have led our fundraising efforts, including the preparation of funding applications, and secured support from the Novo Nordisk Foundation (975,000 DKK).</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Mar 2026 – present</span>
+        <div class="exp-content">
+          <h3>Head of Communications — SIYSS</h3>
+          <p class="exp-org">Unga Forskare</p>
+          <p>The Stockholm International Youth Science Seminar (SIYSS) is a prestigious week-long event held during Nobel Week, bringing together outstanding young scientists from across the world.</p>
+          <p>As Head of Communications, I am responsible for the strategic direction of SIYSS's external communication. This includes developing the communication strategy and plan, setting the overall direction for how SIYSS communicates, and leading the communications team.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Apr 2025 – Feb 2026</span>
+        <div class="exp-content">
+          <h3>Seminar Coordinator — SIYSS</h3>
+          <p class="exp-org">Unga Forskare</p>
+          <p>As Seminar Coordinator, I was responsible for coordinating the seminar programme and developing educational and outreach material for upper secondary school audiences. I planned the "Minds of the Future" panel and served as Q&A master for the participant session, working closely with the SIYSS leadership team and international partners.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Jan 2025 – present</span>
+        <div class="exp-content">
+          <h3>Development Lead</h3>
+          <p class="exp-org">Science Akademiet</p>
+          <p>Science Akademiet is a new national talent initiative for upper secondary school students, supported by the Novo Nordisk Foundation and Tuborgfondet (1.3 million DKK).</p>
+          <p>As Development Lead, I have been part of building the organisation from the ground up, working on the organisational development, outreach to upper secondary schools, and recruitment of instructors and coordinators. I have also contributed to external communication as the initiative has grown.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Sep 2025 – present</span>
+        <div class="exp-content">
+          <h3>Teacher — Science Lab</h3>
+          <p class="exp-org">Københavns Kommunes Ungdomsskole</p>
+          <p>I teach Science Lab, a project-based science course, rooted in a simple conviction: students learn best when they are working on something that matters to them. On Science Lab, students develop their own projects from idea to finished experiment or prototype, choosing their own questions, methods, and directions.</p>
+          <p>The teaching follows the full project cycle, from initial idea and research through experimentation, discussion, and presentation. Where students wish to, we work within the framework of the Unge Forskere competition, which provides a natural milestone and an external goal to work towards. I also serve as a teaching assistant for the Physics/Chemistry classes at the school.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Aug – Oct 2024</span>
+        <div class="exp-content">
+          <h3>Exhibition Guide</h3>
+          <p class="exp-org">Selskabet for Naturlærens Udbredelse (SNU)</p>
+          <p>Served as exhibition guide at "Fra Forsker til Folk" (From Researcher to Public) at Rundetårn, Copenhagen, presenting content about Danish researchers and the history of science to a broad public audience.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">2023 – 2024</span>
+        <div class="exp-content">
+          <h3>Founder &amp; Chair — Forskeklubben</h3>
+          <p class="exp-org">HTX Roskilde</p>
+          <p>Founded and led a science research club to create a space where students could pursue and develop their scientific projects and ideas alongside like-minded peers.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="awards" style="background: var(--card-bg);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Recognition</p>
+    <h2 class="section-title fade-up">Selected Honours &amp; Awards</h2>
+    <div class="awards-grid">
+
+      <div class="award-card fade-up">
+        <p class="award-year">2024</p>
+        <h3>Lundbeckfondens Formidlingspris</h3>
+        <p>Awarded for excellence in science communication. Prize included participation at the London International Youth Science Forum.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2024</p>
+        <h3>Blooms Forsknings- og Formidlingspris</h3>
+        <p>Recognised for outstanding research and communication. Prize included a talk at the 2025 Bloom Festival.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2024</p>
+        <h3>1st Place — Unge Forskere Senior</h3>
+        <p>First place in Physical Science with "The Sound of a Drop". Earned qualification to EUCYS 2024 in Katowice.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2024</p>
+        <h3>GN Store Nord &amp; Causa Sui Prize</h3>
+        <p>Best acoustics-related project at Unge Forskere 2024.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2024</p>
+        <h3>UNF Communication Award</h3>
+        <p>The Danish Youth Association of Science's Special Award for Communication. Prize included participation at SIYSS 2024 and the Nobel Ceremony.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2023</p>
+        <h3>4th Place — ISEF, Physics &amp; Astronomy</h3>
+        <p>Placed 4th globally at the Regeneron International Science and Engineering Fair in Dallas, Texas, with "Improving Tuned Liquid Dampers".</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2022</p>
+        <h3>2nd Place — Unge Forskere Senior</h3>
+        <p>Second place in Physical Science with "Liquid Damping". Earned qualification to ISEF 2023 in Dallas, Texas.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2022</p>
+        <h3>Roskilde University Challenge Prize</h3>
+        <p>Awarded for applying science to solve real-world problems.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2022</p>
+        <h3>SDU Sustainable Development Goals Award</h3>
+        <p>Awarded for an extraordinary project rooted in curiosity with a focus on the UN Sustainable Development Goals.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2021</p>
+        <h3>1st Place — Unge Forskere Junior</h3>
+        <p>First place in Physical Science with "Remote Energy".</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2021</p>
+        <h3>DTU Engineering Challenge Award</h3>
+        <p>Awarded for using science and technology to find solutions that contribute to sustainable change in society.</p>
+      </div>
+
+      <div class="award-card fade-up">
+        <p class="award-year">2020</p>
+        <h3>1st Place — Unge Forskere Junior</h3>
+        <p>First place in Life Science with "Frekvensfarm".</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="section-inner">
+    <p class="section-label fade-up">Science</p>
+    <h2 class="section-title fade-up">Selected Projects</h2>
+    <div class="research-list">
+
+      <div class="research-item fade-up">
+        <div class="research-bar"></div>
+        <div>
+          <h3>2026 Book Chapter — "Magien i undersøgelsen"</h3>
+          <p>Contributed a chapter titled "The Magic of Inquiry" to <em>Naturfaglige undersøgelser — didaktik, motivation og hverdagsrealisme</em>, exploring inquiry as a driver of ownership, meaningful learning, and a way of making complex problems tangible. Published by Danmarks Naturfagslærerforening with support from the LEO Foundation.</p>
+        </div>
+      </div>
+
+      <div class="research-item fade-up">
+        <div class="research-bar"></div>
+        <div>
+          <h3>2023-2025 The Sound of a Drop — Acoustic Rainfall Measurement</h3>
+          <p>Improving acoustic methods for rainfall measurement over the ocean through analysis of droplet impact. Presented at LIYSF, EUCYS, and SIYSS during Nobel Week. CFD work supervised by Associate Professor Johan Rønby Pedersen.</p>
+        </div>
+      </div>
+
+      <div class="research-item fade-up">
+        <div class="research-bar"></div>
+        <div>
+          <h3>2023 Surface Patterns on Europa</h3>
+          <p>Development of a mathematical model ("skewed spherical trochoids") describing surface patterns on Jupiter's moon Europa. Supervised by Associate Professor Aslak Grinsted and Professor Anja Cetti Andersen.</p>
+        </div>
+      </div>
+
+      <div class="research-item fade-up">
+        <div class="research-bar"></div>
+        <div>
+          <h3>2021-2023 Tuned Liquid Dampers for Earthquake Mitigation</h3>
+          <p>Experimental investigation of how kinematic viscosity impacts TLD efficiency. Presented internationally including at Regeneron ISEF and Junior Edison (China). Increased TLD efficiency beyond more expensive alternatives in specific configurations.</p>
+        </div>
+      </div>
+
+      <div class="research-item fade-up">
+        <div class="research-bar"></div>
+        <div>
+          <h3>2020-21 Remote Energy — Turbine-Based Energy Delivery</h3>
+          <p>Development of a turbine-based energy supply unit for remote areas without electricity access. Supervised by the CEO of Floating Power Plant and MSc Anders Køhler.</p>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+<section id="talks" style="background: var(--card-bg);">
+  <div class="section-inner">
+    <p class="section-label fade-up">Outreach</p>
+    <h2 class="section-title fade-up">Selected Talks &amp; Public Engagement</h2>
+    <table class="talks-table fade-up">
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Worldcafé on ideas and scientific projects at the Big Bang conference</td></tr>
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Presentation and workshop on brainstorming scientific ideas at Science talenter, Sorø</td></tr>
+      <tr><td class="talk-year">2025</td><td class="talk-desc">Q&amp;A Master at Stockholm International Youth Science Seminar</td></tr>
+      <tr><td class="talk-year">2025</td><td class="talk-desc">Panelist, "Ask Me Anything om Høj Begavelse" at Folkemødet, Bornholm</td></tr>
+      <tr><td class="talk-year">2025</td><td class="talk-desc">Talk at Opfindefestivallen, Danmarks Tekniske Museum, Helsingør</td></tr>
+      <tr><td class="talk-year">2025</td><td class="talk-desc">Guest speaker at Bloom Festival, Frederiksberg</td></tr>
+      <tr><td class="talk-year">2025</td><td class="talk-desc">Presentation on practical science education at the Big Bang conference, Odense</td></tr>
+      <tr><td class="talk-year">2024</td><td class="talk-desc">Presentation at Stockholm Youth Science Seminar during Nobel Prize week</td></tr>
+      <tr><td class="talk-year">2024</td><td class="talk-desc">Selected presenter at London International Youth Science Forum, The Royal Geographical Society</td></tr>
+      <tr><td class="talk-year">2024</td><td class="talk-desc">Presentation on practical science education for the Danish Agency for Education and Quality</td></tr>
+      <tr><td class="talk-year">2024</td><td class="talk-desc">Presentation at the Forskerspirer regional meeting on scientific project development</td></tr>
+      <tr><td class="talk-year">2024</td><td class="talk-desc">Bloom School walk for elementary students on raindrop acoustics, Frederiksberg</td></tr>
+      <tr><td class="talk-year">2023</td><td class="talk-desc">Presentation on project-based science work at Slotshaven Gymnasium, Holbæk</td></tr>
+      <tr><td class="talk-year">2023</td><td class="talk-desc">Presentation at Unge Forskere regional finals on scientific experiences</td></tr>
+      <tr><td class="talk-year">2023</td><td class="talk-desc">Participant, Junior Edison Eureka (Season 8), Chinese national TV programme</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-inner">
+    <p class="section-label fade-up">Education</p>
+    <h2 class="section-title fade-up">Academic Background</h2>
+    <div class="edu-grid">
+
+      <div class="edu-item fade-up">
+        <h3>BSc in Physics</h3>
+        <p class="edu-school">University of Copenhagen</p>
+        <p>Currently enrolled.</p>
+      </div>
+
+      <div class="edu-item fade-up">
+        <h3>Technical High School Diploma</h3>
+        <p class="edu-school">Pulsen Gymnasium (HTX Roskilde) · 2024</p>
+        <p>Grade average 12.3/12. Physics A, Mathematics A, English A, Chemistry B. Honoured with "The Golden X" for academic excellence and contribution to school culture.</p>
+      </div>
+
+      <div class="edu-item fade-up">
+        <h3>Lower Secondary School</h3>
+        <p class="edu-school">Skt. Josefs Skole, Roskilde · 2021</p>
+        <p>Grade average 11.6/12. Completed IGCSE Business Studies and IGCSE Enterprise. Selected member of the school's science talent programme.</p>
+      </div>
+
+      <div class="edu-item fade-up">
+        <h3>Courses &amp; Summer Schools</h3>
+        <p class="edu-school">Various Institutions</p>
+        <p>"Future STEM Leaders" at IDA Academy. Summer school in Complex Systems at Utrecht University. Mathematical Modelling at UNF. 16 science camps at Science Talents, Sorø.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <p class="section-label fade-up">Say hello</p>
+    <h2 class="section-title fade-up">Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <p class="contact-label">Email</p>
+        <p><a href="mailto:theodor@sivager.com">theodor@sivager.com</a></p>
+
+        <p class="contact-label">Phone</p>
+        <p>+45 40 30 94 80</p>
+
+        <p class="contact-label">LinkedIn</p>
+        <p><a href="https://www.linkedin.com/in/theodor-sivager" target="_blank">Theodor Sivager</a></p>
+
+        <p class="contact-label">Location</p>
+        <p>Frederiksberg, Denmark</p>
+
+      </div>
+      <div class="contact-note fade-up">
+        I'm always interested in connecting with fellow researchers, science communicators, and organisations working to inspire the next generation of scientists.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Theodor Sivager. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('nav ul a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
