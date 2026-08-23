@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Theodor Sivager — Physicist &amp; Science Communicator</title>
+<title>Theodor Sivager — Physics Student &amp; Science Communicator</title>
 <meta name="description" content="Theodor Sivager is a physics student at the University of Copenhagen, science communicator, researcher, and founder of Unge Videnskabsformidlere. Represented Denmark at EUCYS and ISEF.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,6 +13,7 @@
     --paper: #f8f6f3;
     --muted: #6b6560;
     --accent: #c47a2a;
+    --accent-on-photo: #eda860;
     --divider: #d9d4ce;
     --card-bg: #ffffff;
     --serif: 'Cormorant Garamond', Georgia, serif;
@@ -162,6 +163,16 @@
     line-height: 1.8;
   }
 
+  .hero-text .intro a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--accent);
+    transition: color 0.25s;
+  }
+
+  .hero-text .intro a:hover { color: var(--accent); }
+
   .hero-portrait {
     position: relative;
     display: flex;
@@ -175,10 +186,7 @@
     object-fit: cover;
     border-radius: 2px;
     filter: grayscale(15%);
-    transition: filter 0.5s;
   }
-
-  .hero-portrait img:hover { filter: grayscale(0%); }
 
   .hero-portrait::after {
     content: '';
@@ -257,13 +265,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease, filter 0.4s;
     filter: grayscale(10%);
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.04);
-    filter: grayscale(0%);
   }
 
   .gallery-item .overlay {
@@ -271,23 +273,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 1.2rem 1.3rem;
-    background: linear-gradient(to top, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.3) 70%, rgba(26,26,26,0) 100%);
+    padding: 2.4rem 1.3rem 1.2rem;
+    background: linear-gradient(to top, rgba(20,18,16,0.92) 0%, rgba(20,18,16,0.78) 38%, rgba(20,18,16,0.42) 70%, rgba(20,18,16,0) 100%);
     color: white;
-    transform: translateY(8px);
-    opacity: 0.95;
-    transition: transform 0.4s, opacity 0.4s;
   }
 
-  .gallery-item:hover .overlay { transform: translateY(0); opacity: 1; }
-
   .gallery-item .overlay .caption-year {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 0.15rem;
+    color: var(--accent-on-photo);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.55);
   }
 
   .gallery-item .overlay .caption-title {
@@ -295,6 +293,7 @@
     font-size: 1.05rem;
     font-weight: 500;
     line-height: 1.3;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
 
   /* Row 1: LIYSF (wide) + ISEF (narrow) */
@@ -369,12 +368,6 @@
     padding: 1.8rem;
     border-radius: 3px;
     border: 1px solid var(--divider);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .award-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
   }
 
   .award-year {
@@ -427,10 +420,7 @@
 
   .talks-table tr {
     border-bottom: 1px solid var(--divider);
-    transition: background 0.2s;
   }
-
-  .talks-table tr:hover { background: rgba(196,122,42,0.04); }
 
   .talks-table td {
     padding: 1rem 0;
@@ -593,7 +583,6 @@
 
     .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 260px; }
     .gallery-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
-    .gallery-item .overlay { transform: translateY(0); opacity: 1; }
   }
 </style>
 </head>
@@ -622,14 +611,13 @@
   <div class="hero-inner">
     <div class="hero-text fade-up">
       <h1>Theodor<br><em>Sivager</em></h1>
-      <p class="subtitle">Physicist · Science Communicator · Researcher</p>
+      <p class="subtitle">Physics Student · Science Communicator · Researcher</p>
       <p class="intro">
-        Aspiring physicist studying at the University of Copenhagen with a strong background in scientific research and communication. Represented Denmark at EUCYS 2024 and placed 4th globally at ISEF 2023 in Physics &amp; Astronomy. Speaker at the London International Youth Science Forum, the Stockholm International Youth Science Seminar during Nobel Week, and the Bloom Festival.
+        Physics student at the University of Copenhagen with a strong background in scientific research and communication. Represented Denmark at EUCYS 2024 and placed 4th globally at ISEF 2023 in Physics &amp; Astronomy. Speaker at the London International Youth Science Forum, the Stockholm International Youth Science Seminar during Nobel Week, and the Bloom Festival. Chair of <a href="https://ungeformidlere.dk" target="_blank" rel="noopener">Unge Videnskabsformidlere</a> and moderator at Folkemødet.
       </p>
       <div class="hero-links">
         <a href="mailto:theodor@sivager.com">Email</a>
         <a href="https://www.linkedin.com/in/theodor-sivager" target="_blank">LinkedIn</a>
-        <a href="#contact">Get in touch</a>
       </div>
     </div>
     <div class="hero-portrait fade-up">
@@ -656,7 +644,7 @@
         <img src="../isef.jpg" alt="At Regeneron ISEF 2023 in Dallas">
         <div class="overlay">
           <p class="caption-year">2023 · Dallas</p>
-          <p class="caption-title">Regeneron ISEF — 4th Place, Physics &amp; Astronomy</p>
+          <p class="caption-title">Regeneron ISEF, 4th Place, Physics &amp; Astronomy</p>
         </div>
       </div>
 
@@ -669,10 +657,10 @@
       </div>
 
       <div class="gallery-item fade-up">
-        <img src="../uf2024.jpg" alt="Unge Forskere 2024 — 1st place and special awards">
+        <img src="../uf2024.jpg" alt="Unge Forskere 2024, 1st place and special awards">
         <div class="overlay">
           <p class="caption-year">2024 · Copenhagen</p>
-          <p class="caption-title">Unge Forskere — 1st Place &amp; Communication Awards</p>
+          <p class="caption-title">Unge Forskere, 1st Place &amp; Communication Awards</p>
         </div>
       </div>
 
@@ -680,15 +668,15 @@
         <img src="../siyss.jpg" alt="Presenting at SIYSS during Nobel Week">
         <div class="overlay">
           <p class="caption-year">2024 · Stockholm</p>
-          <p class="caption-title">SIYSS — Nobel Week</p>
+          <p class="caption-title">SIYSS, Nobel Week</p>
         </div>
       </div>
 
       <div class="gallery-item fade-up">
-        <img src="../uf2022.jpg" alt="Unge Forskere 2022 — 2nd place, RUC Challenge and SDU Sustainability awards">
+        <img src="../uf2022.jpg" alt="Unge Forskere 2022, 2nd place, RUC Challenge and SDU Sustainability awards">
         <div class="overlay">
           <p class="caption-year">2022 · Copenhagen</p>
-          <p class="caption-title">Unge Forskere — 2nd Place &amp; Special Awards</p>
+          <p class="caption-title">Unge Forskere, 2nd Place &amp; Special Awards</p>
         </div>
       </div>
 
@@ -696,7 +684,7 @@
         <img src="../bloom_talk.jpg" alt="Bloom Festival talk">
         <div class="overlay">
           <p class="caption-year">2025 · Frederiksberg</p>
-          <p class="caption-title">The Sound of a Drop — Bloom Talk</p>
+          <p class="caption-title">The Sound of a Drop, Bloom Talk</p>
         </div>
       </div>
 
@@ -704,7 +692,7 @@
         <img src="../opfinderfestival.jpg" alt="Opfinderfestival at Danmarks Tekniske Museum">
         <div class="overlay">
           <p class="caption-year">2025 · Helsingør</p>
-          <p class="caption-title">Opfinderfestival — Teknisk Museum</p>
+          <p class="caption-title">Opfinderfestival, Teknisk Museum</p>
         </div>
       </div>
 
@@ -712,15 +700,15 @@
         <img src="../china_shanghai.jpg" alt="Junior Edison filming in Shanghai">
         <div class="overlay">
           <p class="caption-year">2023 · Shanghai</p>
-          <p class="caption-title">Junior Edison — Shanghai Astronomy Museum</p>
+          <p class="caption-title">Junior Edison, Shanghai Astronomy Museum</p>
         </div>
       </div>
 
       <div class="gallery-item fade-up">
-        <img src="../china_desert.jpg" alt="Junior Edison in Dunhuang desert">
+        <img src="../folkemode.jpg" alt="Moderating a panel debate at Folkemødet in Allinge">
         <div class="overlay">
-          <p class="caption-year">2023 · Dunhuang</p>
-          <p class="caption-title">Junior Edison — Gansu Desert</p>
+          <p class="caption-year">2026 · Allinge</p>
+          <p class="caption-title">Moderator, Folkemødet</p>
         </div>
       </div>
 
@@ -728,7 +716,7 @@
         <img src="../bigbang.jpg" alt="Worldcafé at Big Bang Conference">
         <div class="overlay">
           <p class="caption-year">2026 · Odense</p>
-          <p class="caption-title">Big Bang — Worldcafé</p>
+          <p class="caption-title">Big Bang, Worldcafé</p>
         </div>
       </div>
 
@@ -736,7 +724,7 @@
         <img src="../soro.jpg" alt="Presenting at Sorø Sciencecenter">
         <div class="overlay">
           <p class="caption-year">2026 · Sorø</p>
-          <p class="caption-title">Unge Videnskabsformidlere — Sorø Sciencecenter</p>
+          <p class="caption-title">Unge Videnskabsformidlere, Sorø Sciencecenter</p>
         </div>
       </div>
 
@@ -744,7 +732,7 @@
         <img src="../book.jpg" alt="Book chapter Magien i undersøgelsen">
         <div class="overlay">
           <p class="caption-year">2026 · Publication</p>
-          <p class="caption-title">Book Chapter — "Magien i undersøgelsen"</p>
+          <p class="caption-title">Book Chapter, "Magien i undersøgelsen"</p>
         </div>
       </div>
 
@@ -764,26 +752,7 @@
           <h3>Founder, Chair &amp; Project Manager</h3>
           <p class="exp-org">Unge Videnskabsformidlere</p>
           <p>Unge Videnskabsformidlere is a national organisation for young science communicators, built on a simple idea: young people communicate science to young people.</p>
-          <p>As founder and chair, I have been responsible for establishing the organisation from the ground up; assembling the founding board and core team, building the organisational structure, and developing the programme. I have led our fundraising efforts, including the preparation of funding applications, and secured support from the Novo Nordisk Foundation (975,000 DKK).</p>
-        </div>
-      </div>
-
-      <div class="exp-item fade-up">
-        <span class="exp-date">Mar 2026 – present</span>
-        <div class="exp-content">
-          <h3>Head of Communications — SIYSS</h3>
-          <p class="exp-org">Unga Forskare</p>
-          <p>The Stockholm International Youth Science Seminar (SIYSS) is a prestigious week-long event held during Nobel Week, bringing together outstanding young scientists from across the world.</p>
-          <p>As Head of Communications, I am responsible for the strategic direction of SIYSS's external communication. This includes developing the communication strategy and plan, setting the overall direction for how SIYSS communicates, and leading the communications team.</p>
-        </div>
-      </div>
-
-      <div class="exp-item fade-up">
-        <span class="exp-date">Apr 2025 – Feb 2026</span>
-        <div class="exp-content">
-          <h3>Seminar Coordinator — SIYSS</h3>
-          <p class="exp-org">Unga Forskare</p>
-          <p>As Seminar Coordinator, I was responsible for coordinating the seminar programme and developing educational and outreach material for upper secondary school audiences. I planned the "Minds of the Future" panel and served as Q&A master for the participant session, working closely with the SIYSS leadership team and international partners.</p>
+          <p>As founder and chair, I have been responsible for establishing the organisation from the ground up; assembling the founding board and core team, building the organisational structure, and developing the programme. I have led our fundraising efforts, including the preparation of funding applications, and secured support from the Novo Nordisk Foundation (975,000 DKK) and Tuborgfondet (100,000 DKK).</p>
         </div>
       </div>
 
@@ -800,10 +769,29 @@
       <div class="exp-item fade-up">
         <span class="exp-date">Sep 2025 – present</span>
         <div class="exp-content">
-          <h3>Teacher — Science Lab</h3>
+          <h3>Teacher, Science Lab</h3>
           <p class="exp-org">Københavns Kommunes Ungdomsskole</p>
           <p>I teach Science Lab, a project-based science course, rooted in a simple conviction: students learn best when they are working on something that matters to them. On Science Lab, students develop their own projects from idea to finished experiment or prototype, choosing their own questions, methods, and directions.</p>
           <p>The teaching follows the full project cycle, from initial idea and research through experimentation, discussion, and presentation. Where students wish to, we work within the framework of the Unge Forskere competition, which provides a natural milestone and an external goal to work towards. I also serve as a teaching assistant for the Physics/Chemistry classes at the school.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Mar 2026 – May 2026</span>
+        <div class="exp-content">
+          <h3>Head of Communications, SIYSS</h3>
+          <p class="exp-org">Unga Forskare</p>
+          <p>The Stockholm International Youth Science Seminar (SIYSS) is a prestigious week-long event held during Nobel Week, bringing together outstanding young scientists from across the world.</p>
+          <p>As Head of Communications, I was responsible for the strategic direction of SIYSS's external communication. This included developing the communication strategy and plan, setting the overall direction for how SIYSS communicated, and leading the communications team.</p>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <span class="exp-date">Apr 2025 – Feb 2026</span>
+        <div class="exp-content">
+          <h3>Seminar Coordinator, SIYSS</h3>
+          <p class="exp-org">Unga Forskare</p>
+          <p>As Seminar Coordinator, I was responsible for coordinating the seminar programme and developing educational and outreach material for upper secondary school audiences. I planned the "Minds of the Future" panel and served as Q&A master for the participant session, working closely with the SIYSS leadership team and international partners.</p>
         </div>
       </div>
 
@@ -819,7 +807,7 @@
       <div class="exp-item fade-up">
         <span class="exp-date">2023 – 2024</span>
         <div class="exp-content">
-          <h3>Founder &amp; Chair — Forskeklubben</h3>
+          <h3>Founder &amp; Chair, Forskeklubben</h3>
           <p class="exp-org">HTX Roskilde</p>
           <p>Founded and led a science research club to create a space where students could pursue and develop their scientific projects and ideas alongside like-minded peers.</p>
         </div>
@@ -968,11 +956,16 @@
     <p class="section-label fade-up">Outreach</p>
     <h2 class="section-title fade-up">Selected Talks &amp; Public Engagement</h2>
     <table class="talks-table fade-up">
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Talk at Opfinderfestivallen, Danmarks Tekniske Museum, Helsingør</td></tr>
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Moderator, panel debate on young experts and the science communicators of tomorrow at Folkemødet, Allinge</td></tr>
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Moderator, panel debate on learning communities at Folkemødet, Allinge</td></tr>
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Panelist, "Pust til gnisten: Hvordan sikrer vi alle børns læringslyst?" at Folkemødet, Allinge</td></tr>
+      <tr><td class="talk-year">2026</td><td class="talk-desc">Bloom School walk for elementary students on Europa's patterns and ice shell, Frederiksberg</td></tr>
       <tr><td class="talk-year">2026</td><td class="talk-desc">Worldcafé on ideas and scientific projects at the Big Bang conference</td></tr>
       <tr><td class="talk-year">2026</td><td class="talk-desc">Presentation and workshop on brainstorming scientific ideas at Science talenter, Sorø</td></tr>
       <tr><td class="talk-year">2025</td><td class="talk-desc">Q&amp;A Master at Stockholm International Youth Science Seminar</td></tr>
       <tr><td class="talk-year">2025</td><td class="talk-desc">Panelist, "Ask Me Anything om Høj Begavelse" at Folkemødet, Bornholm</td></tr>
-      <tr><td class="talk-year">2025</td><td class="talk-desc">Talk at Opfindefestivallen, Danmarks Tekniske Museum, Helsingør</td></tr>
+      <tr><td class="talk-year">2025</td><td class="talk-desc">Talk at Opfinderfestivallen, Danmarks Tekniske Museum, Helsingør</td></tr>
       <tr><td class="talk-year">2025</td><td class="talk-desc">Guest speaker at Bloom Festival, Frederiksberg</td></tr>
       <tr><td class="talk-year">2025</td><td class="talk-desc">Presentation on practical science education at the Big Bang conference, Odense</td></tr>
       <tr><td class="talk-year">2024</td><td class="talk-desc">Presentation at Stockholm Youth Science Seminar during Nobel Prize week</td></tr>
